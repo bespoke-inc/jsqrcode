@@ -36,9 +36,9 @@ function ReedSolomonDecoder(field)
 			for (var i = 0; i < twoS; i++)
 			{
 				// Thanks to sanfordsquires for this fix:
-				var eval = poly.evaluateAt(this.field.exp(dataMatrix?i + 1:i));
-				syndromeCoefficients[syndromeCoefficients.length - 1 - i] = eval;
-				if (eval != 0)
+				var eval_result = poly.evaluateAt(this.field.exp(dataMatrix?i + 1:i));
+				syndromeCoefficients[syndromeCoefficients.length - 1 - i] = eval_result;
+				if (eval_result != 0)
 				{
 					noError = false;
 				}
