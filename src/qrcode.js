@@ -37,8 +37,9 @@ qrcode.decode = function(src){
         qrcode.height = canvas_qr.height;
         qrcode.imagedata = context.getImageData(0, 0, qrcode.width, qrcode.height);
         qrcode.result = qrcode.process(context);
+        qrcode.error = undefined;
         if(qrcode.callback!=null)
-            qrcode.callback(qrcode.result);
+            qrcode.callback(qrcode.error, qrcode.result);
         return qrcode.result;
     }
     else
